@@ -89,6 +89,107 @@ h2::after {
     animation: fadeInUp 0.8s ease;
 }
 
+/* Базовые стили для секции с местом проведения */
+.location {
+    padding: 60px 0;
+    background: #fef9f0;  /* тёплый светлый фон */
+    font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.location h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #5a3e2b;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.location h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e0b282;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.location-details {
+    background: white;
+    border-radius: 28px;
+    padding: 20px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2c3e2f;
+    line-height: 1.8;
+    border: 1px solid #ffefdf;
+}
+
+.location-details i {
+    color: #c2854b;
+    margin-right: 12px;
+    font-size: 1.3rem;
+    width: 32px;
+    display: inline-block;
+}
+
+/* Контейнер карты */
+.map {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map:hover {
+    transform: scale(0.99);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Адаптация iframe внутри карты */
+.map iframe {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    display: block;
+    border: 0; /* убираем рамку, если была */
+}
+
+/* Для десктопа можно зафиксировать высоту */
+@media (min-width: 768px) {
+    .map iframe {
+        height: 450px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .location {
+        padding: 40px 0;
+    }
+    .location h2 {
+        font-size: 1.8rem;
+    }
+    .location-details {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+    .location-details i {
+        font-size: 1.1rem;
+        width: 28px;
+    }
+}
+
 /* Цветы в hero (без анимации) */
 .floating-flower {
     position: absolute;
